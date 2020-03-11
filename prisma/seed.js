@@ -3,26 +3,23 @@ import fs from 'fs'
 
 const prismaClient = new PrismaClient()
 
-const items = fs.readFileSync('prisma/example_files/uvu_courses.json')
+const items = fs.readFileSync('prisma/example_files/items.json')
 
-function loadUVUCourses() {
+function loadItems() {
   const item = JSON.parse(items)
-  const allItems = catalog.comet.course
+  const allItems = item
   const itemTag = allItems.filter(
-    course =>
-      course.prefix._text === 'DGM' ||
-      course.prefix._text === 'CS' ||
-      course.prefix._text === 'IT' ||
-      course.prefix._text === 'INFO',
+    item =>
+      item.tags === tagEntry
   )
-  return dgmCourses.map(crs => {
+  return allItems.map(itm => {
     return {
       data: {
-        name: crs.title._text,
-        description: crs.description._text,
-        defaultCredits: crs.totalCredits._text,
-        courseCode: `${crs.prefix._text} ${crs.number._text}`,
-        termsOffered: crs.termsOffered._text || "Fall",
+        title: itm.title,
+        content: itm.content,
+        priority: itm.priority,
+        dueDate: itm.dueDate,
+        tags: itm.tags || "Uncategorized",
       },
     }
   })
@@ -30,10 +27,10 @@ function loadUVUCourses() {
 
 async function main() {
   try {
-    const allCourses = loadUVUCourses()
-    for (let crs of allCourses) {
-      await prismaClient.course.create(crs)
-      .catch(err => console.log(`Error trying to create UVU courses: ${err} course ${crs}`))
+    const allItems = loadItems()
+    for (let itm of allItems) {
+      await prismaClient.item.create(itm)
+      .catch(err => console.log(`Error trying to create To Do Item: ${err} item ${itm}`))
     }
   } catch (err) {
     console.log(err)

@@ -7,13 +7,13 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model Course {
+model Item {
   id             String   @default(cuid()) @id
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
-  name           String
-  description    String
-  defaultCredits String
-  courseCode     String
-  termsOffered   String
+  title          String
+  content        String
+  dueDate        String
+  priority       String
+  tags           String
 }

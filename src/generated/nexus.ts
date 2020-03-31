@@ -25,7 +25,7 @@ export interface NexusGenEnums {
 }
 
 export interface NexusGenRootTypes {
-  Course: prisma.Course;
+  Task: prisma.Task;
   Query: {};
   String: string;
   Int: number;
@@ -39,28 +39,28 @@ export interface NexusGenAllTypes extends NexusGenRootTypes {
 }
 
 export interface NexusGenFieldTypes {
-  Course: { // field return type
-    courseCode: string; // String!
+  Task: { // field return type
+    title: string; // String!
     createdAt: any; // DateTime!
-    defaultCredits: string; // String!
-    description: string; // String!
+    content: string; // String!
+    dueDate: string; // String!
     id: string; // String!
-    name: string; // String!
-    termsOffered: string; // String!
+    priority: string; // String!
+    tags: string; // String!
     updatedAt: any; // DateTime!
   }
   Query: { // field return type
-    Course: NexusGenRootTypes['Course'] | null; // Course
-    Courses: NexusGenRootTypes['Course'][]; // [Course!]!
+    Task: NexusGenRootTypes['Task'] | null; // Task
+    Tasks: NexusGenRootTypes['Task'][]; // [Task!]!
   }
 }
 
 export interface NexusGenArgTypes {
   Query: {
-    Course: { // args
+    Task: { // args
       id?: string | null; // ID
     }
-    Courses: { // args
+    Tasks: { // args
       searchString?: string | null; // String
     }
   }
@@ -71,7 +71,7 @@ export interface NexusGenAbstractResolveReturnTypes {
 
 export interface NexusGenInheritedFields {}
 
-export type NexusGenObjectNames = "Course" | "Query";
+export type NexusGenObjectNames = "Task" | "Query";
 
 export type NexusGenInputNames = never;
 

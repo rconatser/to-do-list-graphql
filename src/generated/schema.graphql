@@ -2,20 +2,26 @@
 ### Do not make changes to this file directly
 
 
-type Course {
-  courseCode: String!
+type Task {
+  dueDate: String!
   createdAt: DateTime!
-  defaultCredits: String!
-  description: String!
+  priority: String!
+  content: String!
   id: String!
-  name: String!
-  termsOffered: String!
+  title: String!
+  tags: String!
   updatedAt: DateTime!
 }
 
 scalar DateTime
 
+type Mutation {
+  createTask(dueDate: String!, priority: String, content: String, title: String!, tags: String): Task!
+  deleteOneTask(where: TaskWhereUniqueInput!): Task
+  updateTask(dueDate: String, priority: String, content: String, id: ID, title: String, tags: String): Task!
+}
+
 type Query {
-  Course(id: ID): Course
-  Courses(searchString: String): [Course!]!
+  Task(id: ID): Task
+  Tasks(searchString: String): [Task!]!
 }

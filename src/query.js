@@ -2,12 +2,12 @@ import { idArg, queryType, stringArg } from 'nexus'
 
 export const Query = queryType({
   definition(t) {
-    t.field('Item', {
-      type: 'Item',
+    t.field('Task', {
+      type: 'Task',
       nullable: true,
       args: { id: idArg() },
       resolve: (parent, { id }, ctx) => {
-        return ctx.prisma.item.findOne({
+        return ctx.prisma.Task.findOne({
           where: {
             id,
           },
@@ -15,17 +15,20 @@ export const Query = queryType({
       }
     })
 
-    t.list.field('Items', {
-      type: 'Item',
+    t.list.field('Tasks', {
+      type: 'Task',
       args: {
         searchString: stringArg({ nullable: true}),
       },
       resolve: (parent, { searchString }, ctx) => {
-        return ctx.prisma.item.findMany({
+        return ctx.prisma.task.findMany({
           where: {
             OR: [
               { title: { contains: searchString }},
-              { content: { contains: searchString }}
+			  { content: { contains: searchString }},
+			  { dueDate: { contains: searchString }},
+			  { priority: { contains: searchString }},
+			  { tags: { contains: searchString }}
             ],
           },
         })

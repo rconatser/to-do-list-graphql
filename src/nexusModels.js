@@ -1,19 +1,19 @@
 import { objectType } from 'nexus'
 
-const Item = objectType({
-  name: 'Item',
+const Task = objectType({
+  name: 'Task',
   definition(t) {
-    t.item.id()
-    t.item.createdAt()
-    t.item.updatedAt()
-    t.item.title()
-    t.item.content()
-    t.item.priority()
-    t.item.tags()
-    t.item.dueDate()
+    t.model.id()
+    t.model.createdAt()
+    t.model.updatedAt()
+    t.model.title()
+    t.model.content()
+    t.model.priority()
+    t.model.tags()
+    t.model.dueDate()
   }
 })
 
-export const Items = [
-  Item
+export const Models = [
+  Task
 ]

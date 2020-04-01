@@ -8,11 +8,10 @@
     "postinstall": "npm -s run generate",
     "seed": "node -r esm prisma/seed",
     "dev": "npx prisma2 studio --experimental",
-    "start": "node -r esm ./src/server"
+    "start": "node -r esm index.js"
   },
   "dependencies": {
-    "@nexus/schema": "^0.13.1",
-    "@prisma/client": "^2.0.0-preview023",
+    "@prisma/client": "^2.0.0-preview022",
     "apollo-server": "^2.10.1",
     "esm": "^3.2.25",
     "graphql": "^14.6.0",
@@ -20,7 +19,6 @@
     "nexus-prisma": "^0.10.0"
   },
   "devDependencies": {
-    "@prisma/cli": "^2.0.0-beta.1",
     "prisma2": "^2.0.0-preview023"
   },
   "prettier": {

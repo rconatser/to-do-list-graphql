@@ -7,13 +7,13 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model Item {
+model Task {
   id             String   @default(cuid()) @id
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
   title          String
-  content        String?
+  content        String
   dueDate        String
-  priority       String?
-  tags           String?
+  priority       String
+  tags           String
 }

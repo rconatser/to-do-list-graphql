@@ -13,6 +13,10 @@ type Task {
   updatedAt: DateTime!
 }
 
+input TaskWhereUniqueInput {
+  id: String
+}
+
 scalar DateTime
 
 type Mutation {

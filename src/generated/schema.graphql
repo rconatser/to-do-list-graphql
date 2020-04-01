@@ -6,10 +6,10 @@ scalar DateTime
 
 type Mutation {
   createOneTask(data: TaskCreateInput!): Task!
-  deleteOneTask(where: TaskWhereUniqueInput!): Task
-  updateOneTask(data: TaskUpdateInput!, where: TaskWhereUniqueInput!): Task
   createOneUser(data: UserCreateInput!): User!
+  deleteOneTask(where: TaskWhereUniqueInput!): Task
   deleteOneUser(where: UserWhereUniqueInput!): User
+  updateOneTask(data: TaskUpdateInput!, where: TaskWhereUniqueInput!): Task
   updateOneUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User
 }
 
@@ -23,37 +23,37 @@ type Query {
 type Task {
   content: String!
   createdAt: DateTime!
+  createdBy: String!
   dueDate: String!
   id: String!
   priority: String!
   tags: String!
   title: String!
   updatedAt: DateTime!
-  createdBy: String!
 }
 
 input TaskCreateInput {
   content: String!
   createdAt: DateTime
+  createdBy: String!
   dueDate: String!
   id: String
   priority: String!
   tags: String!
   title: String!
   updatedAt: DateTime
-  createdBy: String!
 }
 
 input TaskUpdateInput {
   content: String
   createdAt: DateTime
+  createdBy: String
   dueDate: String
   id: String
   priority: String
   tags: String
   title: String
   updatedAt: DateTime
-  createdBy: String
 }
 
 input TaskWhereUniqueInput {
@@ -61,29 +61,29 @@ input TaskWhereUniqueInput {
 }
 
 type User {
-  name: String!
   createdAt: DateTime!
   email: String!
   id: String!
   lives: String!
+  name: String!
   updatedAt: DateTime!
 }
 
 input UserCreateInput {
-  name: String!
   createdAt: DateTime
   email: String!
   id: String
   lives: String!
+  name: String!
   updatedAt: DateTime
 }
 
 input UserUpdateInput {
-  name: String
   createdAt: DateTime
   email: String
   id: String
   lives: String
+  name: String
   updatedAt: DateTime
 }
 

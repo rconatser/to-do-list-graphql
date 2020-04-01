@@ -49,7 +49,7 @@ export const Query = queryType({
 			}
 		})
 
-		t.listUsers.field('Users', {
+		t.list.field('Users', {
 			type: 'User',
 			args: {
 				searchString: stringArg({ nullable: true }),

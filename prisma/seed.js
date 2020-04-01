@@ -15,7 +15,8 @@ function allTasks() {
 				content: task.content || "No Description",
 				dueDate: task.dueDate || "No Date",
 				priority: task.priority || "Low",
-				tags: task.tags || "No Tags"
+				tags: task.tags || "No Tags",
+				createdBy: task.createdBy || "John Doe"
 			}
 		}
 	})

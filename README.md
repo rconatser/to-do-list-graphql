@@ -1,15 +1,15 @@
 # To Do List using a GraphQL Server
 App utliizing a GraphQL API server using Node and the Prisma Framework. Using the API, you can Create, Read, Update, and Delete (CRUD) both Tasks, and Users. The server implements:
 
-- [x] Prisma as your data modeling tool
-- [x] Docker-based PostgreSQL, MySQL, or MongoDB as your data store
-- [x] At least 3 Query resolvers to get data from your server
+- [x] Prisma as the data modeling tool
+- [x] Docker-based PostgreSQL, MySQL, or MongoDB as the data store
+- [x] At least 3 Query resolvers to get data from the server
 - [x] At least 2 Mutation resolvers allowing users to create, update, or upsert an item.
 - [x] At least 1 Mutation resolver allowing users to delete an item.
-- [x] Your datastore will contain at least 25 items
-- [x] Your app will be deployable locally using Docker and will have seed data entered into the datastore.
-- [x] All of your source code will be properly uploaded to GitHub
-- [x] Your ReadMe file will accurately describe your server install and run process and how to use the APIs
+- [x] The datastore will contain at least 25 items
+- [x] The app will be deployable locally using Docker and will have seed data entered into the datastore.
+- [x] All of the source code will be properly uploaded to GitHub
+- [x] The ReadMe file will accurately describe the server install and run process and how to use the APIs
 
 
 ## How to use

@@ -180,7 +180,7 @@ query {
 ```graphql
 query {
   Users {
-    name,
+	name,
 	email,
 	lives
   }

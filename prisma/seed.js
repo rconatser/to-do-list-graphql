@@ -3,11 +3,12 @@ import fs from 'fs'
 
 const prismaClient = new PrismaClient();
 const tasks = fs.readFileSync('prisma/tasks.json')
+const users = fs.readFileSync('prisma/users.json')
 
 function allTasks() {
 	const list = JSON.parse(tasks);
 	
-	return list.map(task => {
+	return list.tasks.map(task => {
 		return {
 			data: {
 				title: task.title || "No Title",
@@ -20,15 +21,35 @@ function allTasks() {
 	})
 }
 
+function allUsers() {
+	const listUsers = JSON.parse(users);
+	
+	return listUsers.users.map(user => {
+		return {
+			data: {
+				name: user.name || "John Doe",
+				email: user.email || "No Email",
+				lives: user.lives || "No Location"
+			}
+		}
+	})
+}
+
 async function main() {
+	let manyUsers = allUsers();
+	let manyTasks = allTasks();
     try {
-        for (let task of allTasks) {
-            await prismaClient.task.create(task)
-                .catch(err => console.log(`Error trying to create Task: ${err} - ${task}`))
-        }
+		for (let task of manyTasks) {
+			await prismaClient.task.create(task)
+				.catch(err => console.log(`Error trying to create Task: ${err} - ${task}`))
+		}
+		for (let user of manyUsers) {
+            await prismaClient.user.create(user)
+				.catch(err => console.log(`Error trying to create User: ${err} - ${user}`))
+		}
     } catch (err) {
         console.log(err)
-    }
+	}
 }
 
 main().catch(e => console.error(e)).finally(async () => {

@@ -2,30 +2,91 @@
 ### Do not make changes to this file directly
 
 
+scalar DateTime
+
+type Mutation {
+  createOneTask(data: TaskCreateInput!): Task!
+  deleteOneTask(where: TaskWhereUniqueInput!): Task
+  updateOneTask(data: TaskUpdateInput!, where: TaskWhereUniqueInput!): Task
+  createOneUser(data: UserCreateInput!): User!
+  deleteOneUser(where: UserWhereUniqueInput!): User
+  updateOneUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User
+}
+
+type Query {
+  Task(id: ID): Task
+  Tasks(searchString: String): [Task!]!
+  User(id: ID): User
+  Users(searchString: String): [User!]!
+}
+
 type Task {
-  dueDate: String!
-  createdAt: DateTime!
-  priority: String!
   content: String!
+  createdAt: DateTime!
+  dueDate: String!
   id: String!
-  title: String!
+  priority: String!
   tags: String!
+  title: String!
   updatedAt: DateTime!
+  createdBy: String!
+}
+
+input TaskCreateInput {
+  content: String!
+  createdAt: DateTime
+  dueDate: String!
+  id: String
+  priority: String!
+  tags: String!
+  title: String!
+  updatedAt: DateTime
+  createdBy: String!
+}
+
+input TaskUpdateInput {
+  content: String
+  createdAt: DateTime
+  dueDate: String
+  id: String
+  priority: String
+  tags: String
+  title: String
+  updatedAt: DateTime
+  createdBy: String
 }
 
 input TaskWhereUniqueInput {
   id: String
 }
 
-scalar DateTime
-
-type Mutation {
-  createTask(dueDate: String!, priority: String, content: String, title: String!, tags: String): Task!
-  deleteOneTask(where: TaskWhereUniqueInput!): Task
-  updateTask(dueDate: String, priority: String, content: String, id: ID, title: String, tags: String): Task!
+type User {
+  name: String!
+  createdAt: DateTime!
+  email: String!
+  id: String!
+  lives: String!
+  updatedAt: DateTime!
 }
 
-type Query {
-  Task(id: ID): Task
-  Tasks(searchString: String): [Task!]!
+input UserCreateInput {
+  name: String!
+  createdAt: DateTime
+  email: String!
+  id: String
+  lives: String!
+  updatedAt: DateTime
+}
+
+input UserUpdateInput {
+  name: String
+  createdAt: DateTime
+  email: String
+  id: String
+  lives: String
+  updatedAt: DateTime
+}
+
+input UserWhereUniqueInput {
+  id: String
 }

@@ -1,0 +1,84 @@
+{
+	"users": [
+		{
+			"id":"5e3410abb477725a3c9fbfe8",
+			"createdAt": "2020-02-24T18:06:35.801Z",
+			"updatedAt": "2020-02-24T18:06:35.801Z",
+			"name": "Rachel",
+			"email": "rachel@gmail.com",
+			"lives": "Utah"
+		},
+		{
+			"id":"5e5410bdb437725a3c9fbfe9",
+			"createdAt": "2020-02-24T18:06:53.678Z",
+			"updatedAt": "2020-02-24T18:06:53.678Z",
+			"name": "Sam",
+			"email": "sam@gmail.com",
+			"lives": "Washington"
+		},
+		{
+			"id":"5e5200c4b477725a3c9fbfea",
+			"createdAt": "2020-02-24T18:07:00.717Z",
+			"updatedAt": "2020-02-24T18:07:00.717Z",
+			"name": "Alex",
+			"email": "alex@gmail.com",
+			"lives": "Oregon"
+		},
+		{
+			"id":"5e5410cbb277725a3c9fbfeb",
+			"createdAt": "2020-02-24T18:07:07.511Z",
+			"updatedAt": "2020-02-24T18:07:07.511Z",
+			"name": "Max",
+			"email": "max@gmail.com",
+			"lives": "Arkansas"
+		},
+		{
+			"id":"5e5410deb473425a3c9fbfec",
+			"createdAt": "2020-02-24T18:07:26.020Z",
+			"updatedAt": "2020-02-24T18:07:26.020Z",
+			"name": "Theo",
+			"email": "theo@gmail.com",
+			"lives": "Oklahoma"
+		},
+		{
+			"id": "5e5410e5b477725sac9fbfed",
+			"createdAt": "2020-02-24T18:07:33.800Z",
+			"updatedAt": "2020-02-24T18:07:33.800Z",
+			"name": "Bonnie",
+			"email": "bonnie@gmail.com",
+			"lives": "Mississippi"
+		},
+		{
+			"id":"5e5410a3b257725a3c9fbfe7",
+			"createdAt": "2020-02-24T18:06:27.209Z",
+			"updatedAt": "2020-02-24T18:06:27.209Z",
+			"name": "Arthur",
+			"email": "arthur@gmail.com",
+			"lives": "Massachussetts"
+		},
+		{
+			"id":"5e541228b477725a3c9fbfe6",
+			"createdAt": "2020-02-24T18:06:16.586Z",
+			"updatedAt": "2020-02-24T18:06:16.586Z",
+			"name": "Theo",
+			"email": "theo@gmail.com",
+			"lives": "Texas"
+		},
+		{
+			"id":"5e55508fb477725a3c9fbfe5",
+			"createdAt": "2020-02-24T18:06:07.808Z",
+			"updatedAt": "2020-02-24T18:06:07.808Z",
+			"name": "Luna",
+			"email": "luna@gmail.com",
+			"lives": "New York"
+		},
+		{
+			"id":"5e541065b477375a3c9fbfe4",
+			"createdAt": "2020-02-24T18:05:25.369Z",
+			"updatedAt": "2020-02-24T18:05:25.369Z",
+			"name": "Trevor",
+			"email": "trevor@gmail.com",
+			"lives": "Florida"
+		}
+	]
+}

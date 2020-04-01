@@ -19,15 +19,58 @@ declare global {
 }
 
 export interface NexusGenInputs {
+	TaskCreateInput: { // input type
+		content: string; // String!
+		createdAt?: any|null; // DateTime
+		dueDate: string; // String!
+		id?: string|null; // String
+		priority: string; // String!
+		tags: string; // String!
+		title: string; // String!
+		updatedAt?: any|null; // DateTime
+	}
+	TaskUpdateInput: { // input type
+		content?: string|null; // String
+		createdAt?: any|null; // DateTime
+		dueDate?: string|null; // String
+		id?: string|null; // String
+		priority?: string|null; // String
+		tags?: string|null; // String
+		title?: string|null; // String
+		updatedAt?: any|null; // DateTime
+	}
+	TaskWhereUniqueInput: { // input type
+		id?: string|null; // String
+	}
+	UserCreateInput: { // input type
+		name: string; // String!
+		email: string; // String!
+		lives: string; // String!
+		createdAt?: any|null; // DateTime
+		id?: string|null; // String
+		updatedAt?: any|null; // DateTime
+	}
+	UserUpdateInput: { // input type
+		name?: string|null; // String
+		createdAt?: any|null; // DateTime
+		email?: string|null; // String
+		id?: string|null; // String
+		lives?: string|null; // String
+		updatedAt?: any|null; // DateTime
+	}
+	UserWhereUniqueInput: { // input type
+		id?: string|null; // String
+	}
 }
 
 export interface NexusGenEnums {
 }
 
 export interface NexusGenRootTypes {
-	Task: prisma.Task;
 	Mutation: {};
 	Query: {};
+	Task: prisma.Task;
+	User: prisma.User;
 	String: string;
 	Int: number;
 	Float: number;
@@ -37,50 +80,75 @@ export interface NexusGenRootTypes {
 }
 
 export interface NexusGenAllTypes extends NexusGenRootTypes {
+	TaskCreateInput: NexusGenInputs['TaskCreateInput'];
+	TaskUpdateInput: NexusGenInputs['TaskUpdateInput'];
 	TaskWhereUniqueInput: NexusGenInputs['TaskWhereUniqueInput'];
+
+	UserCreateInput: NexusGenInputs['UserCreateInput'];
+	UserUpdateInput: NexusGenInputs['UserUpdateInput'];
+	UserWhereUniqueInput: NexusGenInputs['UserWhereUniqueInput'];
 }
 
 export interface NexusGenFieldTypes {
+	Mutation: { // field return type
+		createOneTask: NexusGenRootTypes['Task']; // Task!
+		deleteOneTask: NexusGenRootTypes['Task']|null; // Task
+		updateOneTask: NexusGenRootTypes['Task']|null; // Task
+
+		createOneUser: NexusGenRootTypes['User']; // Task!
+		deleteOneUser: NexusGenRootTypes['User']|null; // Task
+		updateOneUser: NexusGenRootTypes['User']|null; // Task
+	}
+	Query: { // field return type
+		Task: NexusGenRootTypes['Task']|null; // Task
+		Tasks: NexusGenRootTypes['Task'][]; // [Task!]!
+
+		User: NexusGenRootTypes['User']|null; // Task
+		Users: NexusGenRootTypes['User'][]; // [Task!]!
+	}
 	Task: { // field return type
-		title: string; // String!
-		createdAt: any; // DateTime!
 		content: string; // String!
+		createdAt: any; // DateTime!
 		dueDate: string; // String!
 		id: string; // String!
 		priority: string; // String!
 		tags: string; // String!
+		title: string; // String!
 		updatedAt: any; // DateTime!
+		createdBy: string; // String!
 	}
-	Mutation: {
-		createTask: NexusGenRootTypes['Task']; // Task!
-		deleteOneTask: NexusGenRootTypes['Task'] | null; // Task
-		updateTask: NexusGenRootTypes['Task']; // Task!
-	}
-	Query: { // field return type
-		Task: NexusGenRootTypes['Task'] | null; // Task
-		Tasks: NexusGenRootTypes['Task'][]; // [Task!]!
+	User: {
+		name: string; // String!
+		email: string; // String!
+		lives: string; // String!
+		createdAt: any; // DateTime
+		id: string; // String
+		updatedAt: any; // DateTime
 	}
 }
 
 export interface NexusGenArgTypes {
 	Mutation: {
-		createTask: { // args
-			title: string; // String!
-			content?: string | null; // String
-			priority?: string | null; // String
-			dueDate: string; // String!
-			tags?: string | null; // String
+		createOneTask: { // args
+			data: NexusGenInputs['TaskCreateInput']; // TaskCreateInput!
 		}
 		deleteOneTask: { // args
-			where: NexusGenInputs['TaskWhereUniqueInput']; // CourseWhereUniqueInput!
+			where: NexusGenInputs['TaskWhereUniqueInput']; // TaskWhereUniqueInput!
 		}
-		updateTask: { // args
-			title?: string | null; // String
-			content?: string | null; // String
-			dueDate?: string | null; // String
-			id?: string | null; // ID
-			priority?: string | null; // String
-			tags?: string | null; // String
+		updateOneTask: { // args
+			data: NexusGenInputs['TaskUpdateInput']; // TaskUpdateInput!
+			where: NexusGenInputs['TaskWhereUniqueInput']; // TaskWhereUniqueInput!
+		}
+
+		createOneUser: { // args
+			data: NexusGenInputs['UserCreateInput']; // TaskCreateInput!
+		}
+		deleteOneUser: { // args
+			where: NexusGenInputs['UserWhereUniqueInput']; // TaskWhereUniqueInput!
+		}
+		updateOneUser: { // args
+			data: NexusGenInputs['UserUpdateInput']; // TaskUpdateInput!
+			where: NexusGenInputs['UserWhereUniqueInput']; // TaskWhereUniqueInput!
 		}
 	}
 	Query: {
@@ -88,6 +156,12 @@ export interface NexusGenArgTypes {
 			id?: string|null; // ID
 		}
 		Tasks: { // args
+			searchString?: string|null; // String
+		}
+		User: { // args
+			id?: string|null; // ID
+		}
+		Users: { // args
 			searchString?: string|null; // String
 		}
 	}
@@ -98,9 +172,9 @@ export interface NexusGenAbstractResolveReturnTypes {
 
 export interface NexusGenInheritedFields { }
 
-export type NexusGenObjectNames="Task"|"Query";
+export type NexusGenObjectNames="Mutation"|"Query"|"Task"|"User";
 
-export type NexusGenInputNames=never;
+export type NexusGenInputNames="TaskCreateInput"|"TaskUpdateInput"|"TaskWhereUniqueInput"|"UserCreateInput"|"UserUpdateInput"|"UserWhereUniqueInput";
 
 export type NexusGenEnumNames=never;
 

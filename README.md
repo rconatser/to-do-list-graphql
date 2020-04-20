@@ -111,7 +111,7 @@ query {
 ```graphql
 mutation {
 	createOneTask( data: {
-    	title: "My task",
+    		title: "My task",
 		content: "My task description",
 		dueDate: "04/05/20",
 		priority: "Medium",
@@ -164,7 +164,7 @@ mutation {
 ```graphql
 query {
   Task(id: " __TASK_ID__ ") {
-    id,
+    	id,
 	title,
 	content,
 	dueDate,
@@ -198,7 +198,7 @@ query {
 ```graphql
 mutation {
 	createOneUser( data: {
-    	name: "Jane",
+    		name: "Jane",
 		email: "Jane@none.com",
 		lives: "Alabama"
 	}) {
@@ -247,7 +247,7 @@ mutation {
 ```graphql
 query {
   User(id: " __USER_ID__ ") {
-    id,
+    	id,
 	name,
 	email,
 	lives

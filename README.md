@@ -68,7 +68,11 @@ npm run dev
 You can then navigate to [http://localhost:5555/](http://localhost:5555/) in your browser to view the already existing database. You should see two tabs at the top that allow you to view both Tasks and Users.
 </Details>
 
-### 2. Start the GraphQL server
+### 2. Start DOCKER
+
+Launch your Docker application to prepare to start the server and create the databases.
+
+### 3. Start the GraphQL server
 
 Launch your GraphQL server with this command:
 
@@ -78,7 +82,7 @@ npm start
 
 Navigate to [http://localhost:4000](http://localhost:4000) in your browser to explore the API of your GraphQL server in a [GraphQL Playground](https://github.com/prisma/graphql-playground).
 
-### 3. Using the GraphQL API
+### 4. Using the GraphQL API
 
 The schema that specifies the API operations of your GraphQL server is defined in [`./schema.graphql`](./schema.graphql). Below are a number of operations that you can send to the API using the GraphQL Playground.
 

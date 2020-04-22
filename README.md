@@ -72,6 +72,11 @@ You can then navigate to [http://localhost:5555/](http://localhost:5555/) in you
 
 Launch your Docker application to prepare to start the server and create the databases.
 
+Then run the following command:
+```
+npm run launchDocker
+```
+
 ### 3. Start the GraphQL server
 
 Launch your GraphQL server with this command:

@@ -57,14 +57,6 @@
 			"lives": "Massachussetts"
 		},
 		{
-			"id":"5e541228b477725a3c9fbfe6",
-			"createdAt": "2020-02-24T18:06:16.586Z",
-			"updatedAt": "2020-02-24T18:06:16.586Z",
-			"name": "Theo",
-			"email": "theo@gmail.com",
-			"lives": "Texas"
-		},
-		{
 			"id":"5e55508fb477725a3c9fbfe5",
 			"createdAt": "2020-02-24T18:06:07.808Z",
 			"updatedAt": "2020-02-24T18:06:07.808Z",

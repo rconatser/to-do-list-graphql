@@ -30,6 +30,21 @@ npm install
 
 Note that this also generates Prisma Client JS into `node_modules/@prisma/client` via a `postinstall` hook of the `@prisma/client` package from your `package.json`.
 
+
+### 2. Start DOCKER
+
+Launch your Docker application to prepare to start the server and create the databases.
+
+Then run the following command:
+```
+npm run launchDocker
+```
+
+This will start an instance within Docker titled `pg-docker`. Sometimes that instance doesn't automatically run depending on what kind of Docker application you are using. Be sure to hit the `start` (play) button to run the instance before starting/restarting the databases from scratch, as it will need to make the connection with the running instance to do what it needs to. 
+
+> **Note**: If you try to start/create the databases without the instance properly running within Docker you will receive errors. If this happens, get out of the running command if needed by pressing `CTRL + C` or `CMD + C`, start the Docker instance as outlined above, and try the scripts again. They should work this time.
+
+
 <Details><Summary><strong>Follow these steps to start/restart from scratch</strong></Summary>
 
 If you have an existing Docker container running and want to restart from scratch, run the `nuke` npm script:
@@ -38,11 +53,18 @@ If you have an existing Docker container running and want to restart from scratc
 npm run nuke
 ```
 
-Create a new database instance and migrate it by running the `createDB` npm script:
+Create the Docker Instance:
+```
+npm run launchDocker
+```
+
+Create a new database and migrate it by running the `createDB` npm script:
 
 ```
 npm run createDB
 ```
+> **Note**: This seems to only be a bug on some Docker clients, but if you have the option to create the database and it gets "stuck" after pressing `Yes`, press `CTRL + C` or `CMD + C` to get out of the running terminal, and type `npm run createDB` again. This time it will actually create and migrate the Database.
+
 
 Generate the Prisma Client code by running the `generate` npm script:
 
@@ -67,15 +89,6 @@ npm run dev
 
 You can then navigate to [http://localhost:5555/](http://localhost:5555/) in your browser to view the already existing database. You should see two tabs at the top that allow you to view both Tasks and Users.
 </Details>
-
-### 2. Start DOCKER
-
-Launch your Docker application to prepare to start the server and create the databases.
-
-Then run the following command:
-```
-npm run launchDocker
-```
 
 ### 3. Start the GraphQL server
 

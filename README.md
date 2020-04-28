@@ -63,7 +63,7 @@ Create a new database and migrate it by running the `createDB` npm script:
 ```
 npm run createDB
 ```
-> **Note**: This seems to only be a bug on some Docker clients, but if you have the option to create the database and it gets "stuck" after pressing `Yes`, press `CTRL + C` or `CMD + C` to get out of the running terminal, and type `npm run createDB` again. This time it will actually create and migrate the Database.
+> **Note**: This seems to only be a bug with some clients, but if you have the option to create the database and it gets "stuck" after pressing `Yes`, press `CTRL + C` or `CMD + C` to get out of the running terminal, and type `npm run createDB` again. This time it will actually create and migrate the Database.
 
 
 Generate the Prisma Client code by running the `generate` npm script:

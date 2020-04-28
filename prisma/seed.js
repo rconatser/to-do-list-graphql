@@ -48,6 +48,7 @@ async function main() {
             await prismaClient.user.create(user)
 				.catch(err => console.log(`Error trying to create User: ${err} - ${user}`))
 		}
+		console.log("Database was Seeded");
     } catch (err) {
         console.log(err)
 	}

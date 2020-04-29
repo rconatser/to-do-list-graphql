@@ -8,8 +8,7 @@
     "postinstall": "npm -s run generate",
     "seed": "node -r esm prisma/seed",
     "dev": "npx prisma2 studio --experimental",
-	"start": "node -r esm index.js",
-	"heroku-postbuild": "npm run seed"
+    "start": "node -r esm index.js"
   },
   "dependencies": {
     "@prisma/client": "^2.0.0-preview022",

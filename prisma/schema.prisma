@@ -1,6 +1,6 @@
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = "postgresql://postgres:docker@localhost:5432/pg-docker?schema=public"
 }
 
 generator client {

@@ -11,6 +11,7 @@ App utliizing a GraphQL API server using Node and the Prisma Framework. Using th
 - [x] All of the source code will be properly uploaded to GitHub
 - [x] The ReadMe file will accurately describe the server install and run process and how to use the APIs
 
+## Live URL: [can be found on Heroku](https://to-do-list-graphql-ria2.herokuapp.com/ "View on Heroku")
 
 ## How to use
 
